@@ -13,6 +13,14 @@ bool isSNT(int n) {
 		return false;
 }
 
+bool isNamNhuan(int year) {
+	if (year % 4 == 0 && year % 100 != 0)
+		return true;
+	else if (year % 400 == 0)
+		return true;
+	else return false;
+}
+
 
 int main() {
 	int choice;
@@ -33,8 +41,18 @@ int main() {
 			else
 				cout << "Day ko phai la SNT\n";
 			break;
+		case 2:
+			int year;
+			cout << "Nhap nam: ";
+			cin >> year;
+			if (isNamNhuan(year))
+				cout << "Day la nam nhuan\n";
+			else
+				cout << "Day ko phai la nam nhuan\n";
+			break;
 		default:
 			break;
+
 		}
 	} while (choice != 0);
 	system("pause");
